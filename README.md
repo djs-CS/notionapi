@@ -22,7 +22,8 @@ Follow Notion’s [getting started guide](https://developers.notion.com/docs/get
 Make a new `Client`
 
 ```go
-import "github.com/jomei/notionapi"
+import "github.com/djs-CS/notionapi"
+"
 
 
 client := notionapi.NewClient("your-integration-token")

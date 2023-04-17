@@ -6,7 +6,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/jomei/notionapi"
+	"github.com/djs-CS/notionapi"
+
 )
 
 // RoundTripFunc .

@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/jomei/notionapi"
+	"github.com/djs-CS/notionapi"
 )
 
 func TestAuthenticationClient(t *testing.T) {

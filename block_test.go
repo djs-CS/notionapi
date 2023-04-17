@@ -9,7 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/jomei/notionapi"
+	"github.com/djs-CS/notionapi"
+
 )
 
 func TestBlockClient(t *testing.T) {
