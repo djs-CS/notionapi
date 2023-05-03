@@ -261,6 +261,9 @@ type CreatedByPropertyConfig struct {
 func (p CreatedByPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p CreatedByPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type LastEditedTimePropertyConfig struct {
 	ID             PropertyID           `json:"id"`
