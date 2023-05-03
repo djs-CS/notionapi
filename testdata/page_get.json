@@ -107,6 +107,9 @@
         }, {
           "type": "number",
           "number": 56
+        }, {
+          "type": "number",
+          "number": null
         }]
       }
     }

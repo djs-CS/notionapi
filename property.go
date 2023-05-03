@@ -81,7 +81,7 @@ func (p TextProperty) GetID() PropertyID {
 type NumberProperty struct {
 	ID     PropertyID   `json:"id,omitempty"`
 	Type   PropertyType `json:"type,omitempty"`
-	Number float64      `json:"number"`
+	Number *float64      `json:"number"`
 }
 
 func (p NumberProperty) GetType() PropertyType {

@@ -19,6 +19,8 @@ func TestPageClient(t *testing.T) {
 	}
 
 	t.Run("Get", func(t *testing.T) {
+		num1 := 42.2
+		var num2 float64 = 56
 		tests := []struct {
 			name       string
 			filePath   string
@@ -133,11 +135,15 @@ func TestPageClient(t *testing.T) {
 								Array: notionapi.PropertyArray{
 									&notionapi.NumberProperty{
 										Type:   "number",
-										Number: 42.2,
+										Number: &num1,
 									},
 									&notionapi.NumberProperty{
 										Type:   "number",
-										Number: 56,
+										Number: &num2,
+									},
+									&notionapi.NumberProperty{
+										Type:   "number",
+										Number: nil,
 									},
 								},
 							},
