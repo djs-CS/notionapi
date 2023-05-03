@@ -9,6 +9,7 @@ type PropertyConfigType string
 
 type PropertyConfig interface {
 	GetType() PropertyConfigType
+	GetID()PropertyID
 }
 
 type TitlePropertyConfig struct {
@@ -20,6 +21,9 @@ type TitlePropertyConfig struct {
 func (p TitlePropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p TitlePropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type RichTextPropertyConfig struct {
 	ID       PropertyID         `json:"id,omitempty"`
@@ -30,9 +34,12 @@ type RichTextPropertyConfig struct {
 func (p RichTextPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p RichTextPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type NumberPropertyConfig struct {
-	ID     ObjectID           `json:"id,omitempty"`
+	ID     PropertyID           `json:"id,omitempty"`
 	Type   PropertyConfigType `json:"type"`
 	Number NumberFormat       `json:"number"`
 }
@@ -50,9 +57,12 @@ type NumberFormat struct {
 func (p NumberPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p NumberPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type SelectPropertyConfig struct {
-	ID     ObjectID           `json:"id,omitempty"`
+	ID     PropertyID           `json:"id,omitempty"`
 	Type   PropertyConfigType `json:"type"`
 	Select Select             `json:"select"`
 }
@@ -60,9 +70,12 @@ type SelectPropertyConfig struct {
 func (p SelectPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p SelectPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type MultiSelectPropertyConfig struct {
-	ID          ObjectID           `json:"id,omitempty"`
+	ID          PropertyID           `json:"id,omitempty"`
 	Type        PropertyConfigType `json:"type"`
 	MultiSelect Select             `json:"multi_select"`
 }
@@ -74,9 +87,12 @@ type Select struct {
 func (p MultiSelectPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p MultiSelectPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type DatePropertyConfig struct {
-	ID   ObjectID           `json:"id,omitempty"`
+	ID   PropertyID           `json:"id,omitempty"`
 	Type PropertyConfigType `json:"type"`
 	Date struct{}           `json:"date"`
 }
@@ -84,9 +100,12 @@ type DatePropertyConfig struct {
 func (p DatePropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p DatePropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type PeoplePropertyConfig struct {
-	ID     ObjectID           `json:"id,omitempty"`
+	ID     PropertyID           `json:"id,omitempty"`
 	Type   PropertyConfigType `json:"type"`
 	People struct{}           `json:"people"`
 }
@@ -94,9 +113,12 @@ type PeoplePropertyConfig struct {
 func (p PeoplePropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p PeoplePropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type FilesPropertyConfig struct {
-	ID    ObjectID           `json:"id,omitempty"`
+	ID    PropertyID           `json:"id,omitempty"`
 	Type  PropertyConfigType `json:"type"`
 	Files struct{}           `json:"files"`
 }
@@ -104,9 +126,12 @@ type FilesPropertyConfig struct {
 func (p FilesPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p FilesPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type CheckboxPropertyConfig struct {
-	ID       ObjectID           `json:"id,omitempty"`
+	ID       PropertyID           `json:"id,omitempty"`
 	Type     PropertyConfigType `json:"type"`
 	Checkbox struct{}           `json:"checkbox"`
 }
@@ -114,15 +139,21 @@ type CheckboxPropertyConfig struct {
 func (p CheckboxPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p CheckboxPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type URLPropertyConfig struct {
-	ID   ObjectID           `json:"id,omitempty"`
+	ID   PropertyID           `json:"id,omitempty"`
 	Type PropertyConfigType `json:"type"`
 	URL  struct{}           `json:"url"`
 }
 
 func (p URLPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
+}
+func (p URLPropertyConfig) GetID() PropertyID {
+	return p.ID
 }
 
 type EmailPropertyConfig struct {
@@ -134,9 +165,12 @@ type EmailPropertyConfig struct {
 func (p EmailPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p EmailPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type PhoneNumberPropertyConfig struct {
-	ID          ObjectID           `json:"id,omitempty"`
+	ID          PropertyID           `json:"id,omitempty"`
 	Type        PropertyConfigType `json:"type"`
 	PhoneNumber struct{}           `json:"phone_number"`
 }
@@ -144,9 +178,12 @@ type PhoneNumberPropertyConfig struct {
 func (p PhoneNumberPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p PhoneNumberPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type FormulaPropertyConfig struct {
-	ID      ObjectID           `json:"id,omitempty"`
+	ID      PropertyID           `json:"id,omitempty"`
 	Type    PropertyConfigType `json:"type"`
 	Formula FormulaConfig      `json:"formula"`
 }
@@ -158,9 +195,12 @@ type FormulaConfig struct {
 func (p FormulaPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p FormulaPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type RelationPropertyConfig struct {
-	ID     ObjectID           `json:"id,omitempty"`
+	ID     PropertyID           `json:"id,omitempty"`
 	Type     PropertyConfigType `json:"type"`
 	Relation RelationConfig     `json:"relation"`
 }
@@ -174,9 +214,12 @@ type RelationConfig struct {
 func (p RelationPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p RelationPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type RollupPropertyConfig struct {
-	ID     ObjectID           `json:"id,omitempty"`
+	ID     PropertyID           `json:"id,omitempty"`
 	Type   PropertyConfigType `json:"type"`
 	Rollup RollupConfig       `json:"rollup"`
 }
@@ -192,9 +235,12 @@ type RollupConfig struct {
 func (p RollupPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p RollupPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type CreatedTimePropertyConfig struct {
-	ID          ObjectID           `json:"id,omitempty"`
+	ID          PropertyID           `json:"id,omitempty"`
 	Type        PropertyConfigType `json:"type"`
 	CreatedTime struct{}           `json:"created_time"`
 }
@@ -202,9 +248,12 @@ type CreatedTimePropertyConfig struct {
 func (p CreatedTimePropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p CreatedTimePropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type CreatedByPropertyConfig struct {
-	ID        ObjectID           `json:"id"`
+	ID        PropertyID           `json:"id"`
 	Type      PropertyConfigType `json:"type"`
 	CreatedBy struct{}           `json:"created_by"`
 }
@@ -214,7 +263,7 @@ func (p CreatedByPropertyConfig) GetType() PropertyConfigType {
 }
 
 type LastEditedTimePropertyConfig struct {
-	ID             ObjectID           `json:"id"`
+	ID             PropertyID           `json:"id"`
 	Type           PropertyConfigType `json:"type"`
 	LastEditedTime struct{}           `json:"last_edited_time"`
 }
@@ -222,9 +271,12 @@ type LastEditedTimePropertyConfig struct {
 func (p LastEditedTimePropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p LastEditedTimePropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 type LastEditedByPropertyConfig struct {
-	ID           ObjectID           `json:"id"`
+	ID           PropertyID           `json:"id"`
 	Type         PropertyConfigType `json:"type"`
 	LastEditedBy struct{}           `json:"last_edited_by"`
 }
@@ -232,17 +284,23 @@ type LastEditedByPropertyConfig struct {
 func (p LastEditedByPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
 }
+func (p LastEditedByPropertyConfig) GetID() PropertyID {
+	return p.ID
+}
 
 // StatusPropertyConfig can only be used to GET property configs from Notion databases.
 // The api currently does not support creating or updating status properties.
 type StatusPropertyConfig struct{
-	ID           ObjectID           `json:"id"`
+	ID           PropertyID           `json:"id"`
 	Type         PropertyConfigType `json:"type"`
 	Status		 Select 			`json:"status"`
 }
 
 func (p StatusPropertyConfig) GetType() PropertyConfigType {
 	return p.Type
+}
+func (p StatusPropertyConfig) GetID() PropertyID {
+	return p.ID
 }
 
 type PropertyConfigs map[string]PropertyConfig
